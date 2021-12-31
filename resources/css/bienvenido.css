@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #3e4144;
+    font-size: 1em;
+}
+
+h1 {
+    font-size:4em;
+    line-height: 1.5em;
+    text-align: center;
+    font-weight: 300;
+}
+#header-bienvenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#log-registro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#login,#registro{
+    font-size: 2em;
+    margin: 5px;
+}
+.caja {
+    margin: 100px auto;
+    width: 300px;
+    padding: 70px 100px;
+    background: white;
+}
+
