@@ -27,7 +27,7 @@
     </div>
     <div class="perfil-usuario-body">
         <div class="perfil-usuario-bio">
-            <a  href="{{ url('/student') }}">Atrás</a>
+            <a  href="{{ url('/alumno') }}">Atrás</a>
             <h3 class="titulo"></h3>
             <p class="texto"><br>Registered on:</p>
         </div>

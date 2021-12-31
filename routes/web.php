@@ -77,7 +77,11 @@ Route::get('/clases/create', [ClassController::class, 'create'])->middleware('au
 
 Route::post('/clases', [ClassController::class, 'store'])->middleware('auth.admin');
 
+Route::get('/clases/edit/{id_class}', [ClassController::class, 'edit'])->middleware('auth.admin');
 
+Route::put('/clases/edit/{id_class}', [ClassController::class, 'update'])->middleware('auth.admin');
+
+Route::get('/clases/delete/{id_class}', [ClassController::class, 'delete'])->middleware('auth.admin');
 
 
 Route::get('/perfil', function () {

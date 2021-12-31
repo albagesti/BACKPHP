@@ -34,6 +34,8 @@
                             <td>Profesor:{{$clase->id_teacher}}<br></td>
                             <td>Fecha: {{$clase->day_start}}<br></td>
                             <td>Color: {{$clase->color}}<br></td>
+                            <td><a href="{{ url('/clases/edit', [$clase->id_class]) }}"><button>Editar</button></a></td>
+                            <td><a href="{{ url('/clases/delete', [$clase->id_class]) }}"><button>Eliminar</button></a></td>
                         </tr>
                     </div>
                     @endforeach
