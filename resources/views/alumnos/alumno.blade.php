@@ -13,12 +13,11 @@
     </a>
     <nav>
         <ul>
-            <li><a href="alumno.php?schedule=day&day=0"> Dias</a></li>
+            <li><a href="{{ url('schedule') }}"> Dias</a></li>
             <li><a href="alumno.php?schedule=week&week=0"> Semanas</a></li>
             <li><a href="alumno.php?schedule=month&month=0"> Meses</a></li>
             <li><a  href="{{ url('perfil') }}"> Perfil</a></li>
             <li><a href={{ url('/logout') }}>Log Out</a></li>
-            </form></li>
         </ul>
     </nav>
 </header>
@@ -27,7 +26,7 @@
 
     <article>
         <header>
-            <h1>Bienvenido {{$student->name}} {{$student->surname}}</h1>
+            <h1>Bienvenido Alumno</h1>
         </header>
 
         <img src="https://www.uoc.edu/portal/_resources/common/imatges/sala_de_premsa/noticies/2016/202-nova-marca-uoc.jpg" alt="UOC" />

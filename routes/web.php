@@ -41,6 +41,8 @@ Route::get('alumno', [AlumnoController::class, 'index']);
 
 Route::get('alumno/curso/{id_course}', [AlumnoController::class, 'show']);
 
+Route::get('schedule', [\App\Http\Controllers\ScheduleController::class, 'index']);
+
 
 //CRUD TEACHERS
 

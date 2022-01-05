@@ -15,9 +15,9 @@
         <div class="perfil-usuario-portada">
             <nav>
                 <ul>
-                    <li><a href="alumno.php?schedule=day&day=0"> Dias</a></li>
-                    <li><a href="alumno.php?schedule=week&week=0"> Semanas</a></li>
-                    <li><a href="alumno.php?schedule=month&month=0"> Meses</a></li>
+{{--                    <li><a href="alumno.php?schedule=day&day=0"> Dias</a></li>--}}
+{{--                    <li><a href="alumno.php?schedule=week&week=0"> Semanas</a></li>--}}
+{{--                    <li><a href="alumno.php?schedule=month&month=0"> Meses</a></li>--}}
                     <li><a  href="{{ url('perfil') }}"> Perfil</a></li>
                     <li><a href={{ url('/logout') }}>Log Out</a></li>
                 </ul>
@@ -34,12 +34,13 @@
 
 
         <div class="perfil-usuario-footer">
+            @foreach($users as $User)
             <ul class="lista-datos">
-                    <li>Nombre:</li>
-                    <li>Email:</li>
-                    <li>Contraseña:</li>
+                    <li>Nombre:{{$User->name}}</li>
+                    <li>Email:{{$User->email}}</li>
+                    <li>Contraseña:{{$User->password}}</li>
             </ul>
-
+            @endforeach
 
         </div>
 

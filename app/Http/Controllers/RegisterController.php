@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use DB;
 
 class RegisterController extends Controller {
 
@@ -14,7 +15,9 @@ class RegisterController extends Controller {
 
     public function index()
     {
-//        return view('home');
+
+
+
         if(auth()->user()->role == 'admin'){
             return redirect()->to('admin');
         }else{
