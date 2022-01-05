@@ -8,7 +8,7 @@
 
 <body>
 <header id="main-header">
-    <a id="logo-header" href="#">
+    <a id="logo-header" href="{{url()->previous()}}">
         <span class="site-name">BackPHP</span>
     </a>
     <nav>
@@ -17,7 +17,7 @@
             <li><a href="alumno.php?schedule=week&week=0"> Semanas</a></li>
             <li><a href="alumno.php?schedule=month&month=0"> Meses</a></li>
             <li><a  href="{{ url('perfil') }}"> Perfil</a></li>
-            <li><a href={{ url('/logout') }}>Log Out</a></li>
+            <li><a href="{{ url('/logout') }}">Log Out</a></li>
             </form></li>
         </ul>
     </nav>
@@ -32,8 +32,8 @@
             <div>
                 @foreach($clases as $clase)
                     <div class="panel-curso-alumno panel-clase">
+                    <h3>{{$clase->classname}}</h4>
                         <div class="detalle-clase">
-                            <h4>{{$clase->classname}}</h4>
                             <h5>{{$clase->teachername}} {{$clase->surname}}</h5>
                             <p>{{Carbon\Carbon::parse($clase->day)->format('d/m/Y')}}</p>
                             <p>{{$clase->start}}</p>
@@ -41,9 +41,27 @@
                             <div style="background-color: {{$clase->color}}; width: 50px; height: 50px;"></div>
                         </div>
                         <div class="detalle-clase">
-                            <p>5</p>
-                            <p>8</p>
-
+                            <h4>Notas:</h4>
+                            <div class="detalle-notas">
+                                <div class="nota">
+                                    <h6>AA1</h6>
+                                    <p>7</p>
+                                </div>
+                                <div class="nota">
+                                    <h6>AA2</h6>
+                                    <p>9.2</p>
+                                </div>
+                            </div>
+                            <div class="detalle-notas notas-finales">
+                                <div class="nota">
+                                    <h6>EC</h6>
+                                    <p>7.6</p>
+                                </div>
+                                <div class="nota">
+                                    <h6>Final</h6>
+                                    <p>8.5</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 @endforeach

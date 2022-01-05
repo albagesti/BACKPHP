@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\students;
+use Carbon\Carbon;
 use DB;
 
 class RegisterController extends Controller {
@@ -34,6 +36,15 @@ class RegisterController extends Controller {
         ]);
 
         $user = User::create(request(['name', 'email', 'password']));
+        $student = new students;
+        $student->id=$user->id;
+        $student->username=$user->name;
+        $student->name=$user->name;
+        $student->email=$user->email;
+        $student->pass=$user->password;
+        $student->date_registered=Carbon::now();
+        $student->save();
+
 
         auth()->login($user);
         return redirect()->to('/');

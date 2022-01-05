@@ -3,21 +3,20 @@
 <head>
     <meta charset="utf-8">
     <title>Cabecera fija</title>
+
     <link rel="stylesheet" href="{{ asset('css/principal.css') }}">
 </head>
 
 <body>
 <header id="main-header">
-    <a id="logo-header" href="#">
+    <a id="logo-header" href="../../administrador.php">
         <span class="site-name">BackPHP</span>
     </a>
+
     <nav>
         <ul>
-            <li><a href="{{ url('schedule') }}"> Dias</a></li>
-            <li><a href="alumno.php?schedule=week&week=0"> Semanas</a></li>
-            <li><a href="alumno.php?schedule=month&month=0"> Meses</a></li>
-            <li><a  href="{{ url('perfil') }}"> Perfil</a></li>
-            <li><a href={{ url('/logout') }}>Log Out</a></li>
+            <li><a href="{{ url('/perfil') }}">{{$student->username}}</a></li>
+            <li><a href="{{ route('login.destroy') }}"><b>Log Out</b></a></li>
         </ul>
     </nav>
 </header>
@@ -26,13 +25,17 @@
 
     <article>
         <header>
-            <h1>Bienvenido Alumno</h1>
+            <h1>Bienvenido {{$student->name}}</h1>
         </header>
 
         <img src="https://www.uoc.edu/portal/_resources/common/imatges/sala_de_premsa/noticies/2016/202-nova-marca-uoc.jpg" alt="UOC" />
 
         <div class="content">
+            @if(count($cursos) < 1)
+                No estás inscrito en ningún curso... Espera a que tu profesor te inscriba.
+            @else
             Estos son tus cursos inscritos:
+            @endif
 
             <div class="lista-cursos-alumno">
                 @foreach($cursos as $curso)

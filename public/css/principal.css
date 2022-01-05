@@ -27,12 +27,6 @@ img {
     height: auto;
 }
 
-
-#main-header {
-    background: #333;
-    color: white;
-    height: 80px;
-}
 #logo-header {
     float: left;
     padding: 15px 0 0 20px;
@@ -105,7 +99,7 @@ nav ul li a:hover {
 }
 
 #main-header {
-    background: #333;
+    background: #6366f1;
     color: white;
     height: 80px;
 
@@ -221,4 +215,78 @@ tr:hover td {
     justify-content: center;
     align-items: center;
 
+}
+
+/*PANEL ESTUDIANTE */
+
+.lista-cursos-alumno {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.panel-curso-alumno {
+    margin-top: 1rem;
+    padding: 1rem;
+    width: 30%;
+    border: 1px solid rgb(80, 80, 80);
+    border-radius: 10px;
+    background-color: #FF6961;
+}
+
+.active-course {
+    background-color: #77DD77;
+}
+
+.panel-curso-enlace {
+    text-decoration: none;
+    color: rgb(80, 80, 80);
+}
+
+.panel-curso-enlace > p, h4 {
+    margin: 0.4rem 0;
+}
+
+.panel-clase {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(99,102,241, 0.4);
+}
+
+.panel-clase > h3 {
+    margin: 0.2rem auto;
+}
+
+.detalle-clase {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.6rem;
+    width: 90%;
+}
+.detalle-clase > h5, p {
+    margin: 0 auto;
+    padding: 0.2rem;
+}
+
+.detalle-notas {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.nota {
+    margin: 0 1rem;
+    width: 5%;
+}
+
+.nota > h6 {
+    margin: 0;
+}
+
+.notas-finales {
+    justify-content: flex-end;
 }

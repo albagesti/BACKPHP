@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\students;
 use App\Models\courses;
-use App\Models\classes;
+use App\Models\Classes;
 
 class AlumnoController extends Controller
 {
@@ -22,8 +22,8 @@ class AlumnoController extends Controller
     }
 
     public function show($id_course){
-        $cursos = courses::get()->first();
-        $clases = classes::join('teachers', 'class.id_teacher', '=', 'teachers.id_teacher')
+        $cursos = courses::get()->where('id_course', '=', $id_course)->first();
+        $clases = Classes::join('teachers', 'class.id_teacher', '=', 'teachers.id_teacher')
         ->join('schedule', 'class.id_schedule', '=', 'schedule.id_schedule')
         ->where('id_course', '=', $id_course)
         ->select('class.name as classname', 'class.color as color', 'teachers.name as teachername',

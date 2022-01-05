@@ -12,13 +12,13 @@
     <a id="logo-header" href="../../administrador.php">
         <span class="site-name">BackPHP</span>
     </a>
+
     <nav>
         <ul>
             <li><a href="{{ url('/teachers') }}">Profesores</a></li>
             <li><a href="{{ url('/cursos') }}">Cursos</a></li>
             <li><a href="{{ url('/clases') }}">Clases</a></li>
-            <li><a href={{ url('/logout') }}>Log Out</a></li>
-                </form></li>
+            <li><a href="{{ route('login.destroy') }}">Log Out</a></li>
         </ul>
     </nav>
 </header>
