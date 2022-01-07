@@ -40,6 +40,7 @@
                             <p>{{$clase->end}}</p>
                             <div style="background-color: {{$clase->color}}; width: 50px; height: 50px;"></div>
                         </div>
+                        <hr>
                         <div class="detalle-clase">
                             <h4>Notas:</h4>
                             <div class="detalle-notas">
@@ -52,9 +53,20 @@
                                     <p>9.2</p>
                                 </div>
                             </div>
-                            <div class="detalle-notas notas-finales">
+                            <div class="detalle-notas notas-examenes">
                                 <div class="nota">
+                                    <h6>Ex1</h6>
+                                    <p>10</p>
+                                </div>
+                                <div class="nota">
+                                    <h6>Ex2</h6>
+                                    <p>8.5</p>
+                                </div>
+                            </div>
+                            <div class="detalle-notas notas-finales">
+                                <div class="nota ec">
                                     <h6>EC</h6>
+                                    <h6>(60%)</h6>
                                     <p>7.6</p>
                                 </div>
                                 <div class="nota">

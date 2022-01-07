@@ -29,7 +29,10 @@ class AlumnoController extends Controller
         ->select('class.name as classname', 'class.color as color', 'teachers.name as teachername',
         'teachers.surname as surname',
         'schedule.day as day', 'schedule.time_start as start', 'schedule.time_end as end')->get();
+        $notas = Classes::join('works', 'class.id_class', '=', 'works.id_class')
+        ->join('exams', 'class.id_class', '=', 'exams.id_class')
+        ->where('id_student', '=', Auth::user()->id);
 
-        return view('alumnos.cursoDetalle', ['clases' => $clases, 'cursos' => $cursos]);
+        return view('alumnos.cursoDetalle', ['clases' => $clases, 'cursos' => $cursos, 'notas' => $notas]);
     }
 }

@@ -290,3 +290,7 @@ tr:hover td {
 .notas-finales {
     justify-content: flex-end;
 }
+
+.ec {
+    width: 100px;
+}
